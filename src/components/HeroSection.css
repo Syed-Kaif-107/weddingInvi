@@ -1,0 +1,176 @@
+/* ============================================================
+   HERO / MAIN INVITATION CARD (MOBILE GRID ENHANCED)
+   ============================================================ */
+
+.hero-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4rem) clamp(0.75rem, 3vw, 1.5rem);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Background geometric pattern */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.5' stroke-opacity='0.08'%3E%3Cpolygon points='40,5 75,27.5 75,72.5 40,95 5,72.5 5,27.5'/%3E%3Cline x1='40' y1='5' x2='40' y2='95'/%3E%3Cline x1='5' y1='27.5' x2='75' y2='72.5'/%3E%3Cline x1='75' y1='27.5' x2='5' y2='72.5'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* ── Invitation Card ──────────────────────────────────────── */
+.invitation-card {
+  background: linear-gradient(160deg, #fdfaf3 0%, #faf3e1 45%, #f5e8cc 100%);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  box-shadow: 0 16px 50px rgba(30, 91, 58, 0.12), 0 2px 8px rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(1.6rem, 5vw, 3.5rem) clamp(0.9rem, 4vw, 2.8rem);
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  animation: cardEntrance 1s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(35px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Double inner border */
+.invitation-card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Corner flourishes */
+.card-corner {
+  position: absolute;
+  width: clamp(24px, 5vw, 36px);
+  height: clamp(24px, 5vw, 36px);
+  pointer-events: none;
+}
+.card-corner--tl { top: 4px; left: 4px; }
+.card-corner--tr { top: 4px; right: 4px; transform: scaleX(-1); }
+.card-corner--bl { bottom: 4px; left: 4px; transform: scaleY(-1); }
+.card-corner--br { bottom: 4px; right: 4px; transform: scale(-1); }
+
+/* ── Arabic Bismillah ─────────────────────────────────────── */
+.bismillah-text {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+  color: var(--gold-dark);
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.bismillah-translation {
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.8vw, 0.8rem);
+  color: var(--text-mid);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Together line ────────────────────────────────────────── */
+.together-line {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.8vw, 0.84rem);
+  color: var(--text-mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Names ────────────────────────────────────────────────── */
+.groom-name,
+.bride-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 6vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--emerald);
+  word-break: break-word;
+}
+
+.bride-name {
+  color: var(--emerald-dark);
+}
+
+.occupation-line {
+  font-family: var(--font-body);
+  font-size: clamp(0.68rem, 1.7vw, 0.8rem);
+  color: var(--gold-dark);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+/* Weds */
+.weds-text {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.45rem);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin: 0.45rem 0;
+}
+
+/* ── Invitation message ───────────────────────────────────── */
+.invitation-message {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 2.2vw, 0.94rem);
+  color: var(--text-mid);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ── Scroll indicator ─────────────────────────────────────── */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+  color: var(--gold-dark);
+  animation: bounceScroll 2s ease-in-out infinite;
+  cursor: default;
+}
+
+.scroll-indicator span {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+@keyframes bounceScroll {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}

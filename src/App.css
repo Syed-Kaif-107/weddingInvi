@@ -1,0 +1,32 @@
+/* ============================================================
+   APP WRAPPER STYLES
+   ============================================================ */
+
+/* Main content — hidden until envelope opens */
+.main-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+  pointer-events: none;
+}
+
+.main-content.visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Smooth scroll anchor target padding */
+section[id] {
+  scroll-margin-top: 2rem;
+}
+
+/* Soft golden section separator */
+.section-sep {
+  width: 100%;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto;
+  opacity: 0.5;
+}
